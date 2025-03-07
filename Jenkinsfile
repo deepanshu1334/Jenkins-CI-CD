@@ -133,7 +133,7 @@ pipeline {
 
         stage('Build Docker Images') {
             steps {
-                sh 'docker build -t my-app:latest .'
+                sh 'docker-compose build'
             }
         }
 
