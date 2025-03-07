@@ -19,10 +19,10 @@ npm-debug.log
 yarn-debug.log
 yarn-error.log
 
-# Ignore Docker build files
-docker-compose.override.yml
-Dockerfile*
-.dockerignore
+# # Ignore Docker build files
+# docker-compose.override.yml
+# Dockerfile*
+# .dockerignore
 
 # Ignore OS/System files
 .DS_Store
