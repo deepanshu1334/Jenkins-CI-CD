@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://database:27017/mydb
+    depends_on:
+      - database
+
+  database:
+    image: mongo:latest
+    ports:
+      - "27018:27017"  # Changed host port to 27018 to avoid conflict
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:
